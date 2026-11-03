@@ -175,6 +175,24 @@
   .quote cite { display: block; margin-top: 24px; font-style: normal; color: var(--muted); font-size: 14.5px; }
   .quote cite b { color: var(--text); font-weight: 600; }
 
+  /* Drivers: recruiting call to action, kept below the shipper content */
+  .drivers-grid { display: grid; grid-template-columns: 6fr 5fr; gap: 56px; align-items: center; }
+  .drivers-intro h2 { font-size: clamp(32px, 4vw, 50px); margin: 16px 0; }
+  .drivers-intro p { color: var(--d-muted); max-width: 500px; margin-bottom: 28px; }
+  .drivers-intro .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .perks { background: var(--d-card); border: 1px solid var(--d-line); border-radius: var(--d-radius); padding: 28px; }
+  .perks .hiring { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--d-accent); background: var(--d-tint); padding: 7px 12px; border-radius: 99px; }
+  .perks .hiring i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .perks ul { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 18px; }
+  .perks li { display: flex; gap: 14px; align-items: flex-start; }
+  .perks .tick { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: var(--d-accent); background: var(--d-tint); }
+  .perks b { display: block; font-family: var(--head); font-size: 17px; }
+  .perks li span:not(.tick) { color: var(--d-muted); font-size: 14.5px; }
+  @media (max-width: 960px) { .drivers-grid { grid-template-columns: 1fr; gap: 36px; } }
+  @media (max-width: 600px) { .perks { padding: 22px; } .drivers-intro .actions .btn { flex: 1 1 100%; justify-content: center; } }
+
+  :root { --d-card: var(--panel); --d-line: var(--line); --d-radius: 12px; --d-muted: var(--soft); --d-accent: var(--red); --d-tint: rgba(255,59,85,.12); }
+
   /* CTA: red angled band */
   .cta { background: linear-gradient(120deg, var(--red-deep), var(--red)); }
   .cta .wrap { padding-top: 88px; padding-bottom: 88px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
@@ -318,6 +336,26 @@
   <div class="quote">
     <blockquote>Working with this team is the easiest part of our supply chain. They pick up the phone, they show up on time and they fix problems before we even notice them.</blockquote>
     <cite><b>Jane Doe</b> · Logistics Manager, Acme Co.</cite>
+  </div>
+</div></section>
+
+<section class="band drivers alt"><div class="wrap">
+  <div class="drivers-grid">
+    <div class="drivers-intro">
+      <span class="eyebrow">For drivers</span>
+      <h2>Drive for a company that knows your name.</h2>
+      <p>We're hiring CDL-A drivers out of Davenport, Romeoville, Eagan and Davie. Family-owned, with the miles and the support to back it up.</p>
+      <div class="actions"><a href="#" class="btn btn-red">See open positions →</a><a href="#" class="btn btn-line">Apply in 5 minutes</a></div>
+    </div>
+    <div class="perks">
+      <span class="hiring"><i></i>Now hiring · CDL-A</span>
+      <ul>
+        <li><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Weekly pay</b><span>Paid every week, on time.</span></div></li>
+        <li><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Home time you can plan</b><span>Regional and dedicated lanes that get you home.</span></div></li>
+        <li><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Well-kept equipment</b><span>Late-model trucks, maintained at our own terminals.</span></div></li>
+        <li><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Dispatch that answers</b><span>Real people on the phone, day or night.</span></div></li>
+      </ul>
+    </div>
   </div>
 </div></section>
 

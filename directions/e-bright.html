@@ -173,6 +173,25 @@
   .quote cite { display: block; margin-top: 22px; font-style: normal; color: var(--muted); font-size: 15px; }
   .quote cite b { color: var(--ink); }
 
+  /* Drivers: recruiting call to action, kept below the shipper content */
+  .drivers-grid { display: grid; grid-template-columns: 6fr 5fr; gap: 56px; align-items: center; }
+  .drivers-intro h2 { font-size: clamp(32px, 4vw, 50px); margin: 16px 0; }
+  .drivers-intro p { color: var(--d-muted); max-width: 500px; margin-bottom: 28px; }
+  .drivers-intro .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .perks { background: var(--d-card); border: 1px solid var(--d-line); border-radius: var(--d-radius); padding: 28px; }
+  .perks .hiring { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--d-accent); background: var(--d-tint); padding: 7px 12px; border-radius: 99px; }
+  .perks .hiring i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .perks ul { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 18px; }
+  .perks li { display: flex; gap: 14px; align-items: flex-start; }
+  .perks .tick { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: var(--d-accent); background: var(--d-tint); }
+  .perks b { display: block; font-family: var(--head); font-size: 17px; }
+  .perks li span:not(.tick) { color: var(--d-muted); font-size: 14.5px; }
+  @media (max-width: 960px) { .drivers-grid { grid-template-columns: 1fr; gap: 36px; } }
+  @media (max-width: 600px) { .perks { padding: 22px; } .drivers-intro .actions .btn { flex: 1 1 100%; justify-content: center; } }
+
+  :root { --d-card: var(--white); --d-line: var(--line); --d-radius: 6px; --d-muted: var(--muted); --d-accent: var(--red); --d-tint: var(--red-tint); }
+  .perks { border-top: 4px solid var(--red); }
+
   /* CTA */
   .cta { background: var(--red); color: #fff; }
   .cta .wrap { padding-top: 88px; padding-bottom: 88px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
@@ -324,6 +343,26 @@
     <a class="ind" href="#"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg><h3>Retail</h3><p>Store replenishment and distribution center freight on tight windows.</p></a>
     <a class="ind" href="#"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l8-6 8 6v10M9 20v-6h6v6"/></svg><h3>Construction</h3><p>Lumber, steel and building materials, delivered to the job site.</p></a>
     <a class="ind" href="#"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><h3>Manufacturing</h3><p>Inbound parts and outbound finished goods on recurring lanes.</p></a>
+  </div>
+</div></section>
+
+<section class="band drivers mist"><div class="wrap">
+  <div class="drivers-grid">
+    <div class="drivers-intro">
+      <span class="eyebrow">For drivers</span>
+      <h2>Drive for a company that knows your name.</h2>
+      <p>We're hiring CDL-A drivers out of Davenport, Romeoville, Eagan and Davie. Family-owned, with the miles and the support to back it up.</p>
+      <div class="actions"><a href="#" class="btn btn-red">See open positions →</a><a href="#" class="btn btn-navy-line">Apply in 5 minutes</a></div>
+    </div>
+    <div class="perks">
+      <span class="hiring"><i></i>Now hiring · CDL-A</span>
+      <ul>
+        <li><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Weekly pay</b><span>Paid every week, on time.</span></div></li>
+        <li><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Home time you can plan</b><span>Regional and dedicated lanes that get you home.</span></div></li>
+        <li><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Well-kept equipment</b><span>Late-model trucks, maintained at our own terminals.</span></div></li>
+        <li><span class="tick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Dispatch that answers</b><span>Real people on the phone, day or night.</span></div></li>
+      </ul>
+    </div>
   </div>
 </div></section>
 

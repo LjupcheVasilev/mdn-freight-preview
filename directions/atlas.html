@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>MDN Freight · Concept G</title>
+<title>MDN Freight · Atlas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -268,6 +268,124 @@
   .rv { opacity: 0; transform: translateY(24px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
   .rv.in { opacity: 1; transform: none; }
 
+
+  /* ===== Merged additions (photo hero, why cards, tracking photo, stats band, blog, dark footer) ===== */
+  .hero2 { padding: 12px 12px 0; }
+  .hero2 .frame { position: relative; border-radius: 30px; overflow: hidden; min-height: min(94vh, 880px); display: flex; align-items: flex-end; color: #fff; background: #12151b; isolation: isolate; }
+  .hero2 .media, .hero2 .media video, .hero2 .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero2 .media { z-index: -2; transform: scale(1.06); animation: settle 2.6s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes settle { to { transform: none; } }
+  .hero2 .frame::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(9,11,15,.86) 0%, rgba(9,11,15,.55) 42%, rgba(9,11,15,.12) 75%), linear-gradient(180deg, rgba(9,11,15,.45) 0%, transparent 25%, transparent 60%, rgba(9,11,15,.7) 100%); }
+  .hero2 .in { width: 100%; max-width: var(--max); margin: 0 auto; padding: 150px var(--gut) 54px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 40px; align-items: end; }
+  .hero2 h1 { font: 600 clamp(46px, 6.6vw, 100px)/.95 var(--sans); letter-spacing: -.06em; margin: 22px 0 22px; max-width: 12ch; }
+  .grad-l { background: linear-gradient(100deg, #ff5a6e 0%, #ff8a65 60%, #ffb38a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .04em; }
+  .hero2 .sub { color: rgba(255,255,255,.78); }
+  .hero2 .ctas { display: flex; gap: 10px; margin-top: 32px; flex-wrap: wrap; }
+  .btn.glassd { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.28); color: #fff; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .chip.dk { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.22); color: #fff; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .chip.dk b { background: var(--red); }
+  .trust { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 34px; font: 500 11.5px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.65); }
+  .trust span { display: inline-flex; align-items: center; gap: 8px; }
+  .trust span::before { content: ""; width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.55); background: radial-gradient(circle, #fff 0 2px, transparent 2.5px); }
+  .hero2 .float { position: relative; left: auto; bottom: auto; top: auto; justify-self: end; width: 340px; color: var(--ink); }
+  .hero2 .float .bar i { animation-delay: 1.4s; }
+  .cue { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); font: 500 10.5px/1 var(--mono); letter-spacing: .2em; color: rgba(255,255,255,.55); display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .cue i { width: 1px; height: 26px; background: linear-gradient(#fff, transparent); animation: drip 2s infinite; transform-origin: top; }
+  @keyframes drip { 0% { transform: scaleY(0); } 60% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .wc { background: var(--card); border: 1px solid var(--line2); border-radius: var(--r); padding: 28px; transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s; }
+  .wc:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .wc .ic { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; margin-bottom: 40px; }
+  .wc h3 { font: 600 22px/1.15 var(--sans); letter-spacing: -.03em; }
+  .wc p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+  .wc .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 16px; }
+  .wc .tags span { font: 500 11.5px/1 var(--mono); padding: 6px 9px; border-radius: 99px; background: var(--bg); border: 1px solid var(--line2); }
+
+  .track2 .grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px; align-items: center; }
+  .checks { list-style: none; margin: 30px 0 34px; display: grid; gap: 14px; }
+  .checks li { display: flex; gap: 12px; align-items: center; font-size: 16.5px; }
+  .checks li i { flex: none; width: 24px; height: 24px; border-radius: 7px; background: rgba(18,183,106,.14); color: var(--green); display: grid; place-items: center; font-style: normal; font-size: 13px; font-weight: 700; }
+  .tphoto { position: relative; border-radius: 28px; overflow: hidden; min-height: 580px; box-shadow: var(--shadow); }
+  .tphoto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .tphoto .float.tl { left: 20px; top: 20px; padding: 10px 14px; border-radius: 99px; display: flex; align-items: center; gap: 10px; font: 500 12.5px/1 var(--mono); }
+  .tphoto .float.tb { left: 20px; right: 20px; bottom: 20px; padding: 20px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
+  .tb .k { font: 500 11px/1 var(--mono); color: var(--muted); letter-spacing: .05em; }
+  .tb .v { font: 600 26px/1.1 var(--sans); letter-spacing: -.04em; margin-top: 6px; }
+  .tb .ok { font: 500 12px/1 var(--mono); color: var(--green); margin-top: 8px; }
+  .steps.light li { color: var(--ink); }
+  .steps.light li small { color: var(--muted); }
+  .steps.light li::before { background: #e4e2dc; border-color: #fff; box-shadow: 0 0 0 1.5px #cfccc4; }
+  .steps.light li::after { background: #e4e2dc; }
+  .steps.light li.done::before { background: var(--green); box-shadow: 0 0 0 1.5px var(--green); }
+  .steps.light li.done::after { background: var(--green); }
+  .steps.light li.now::before { background: var(--red); box-shadow: 0 0 0 4px rgba(225,25,55,.2); }
+
+  .band { margin: 0 12px; border-radius: 32px; overflow: hidden; position: relative; color: #fff; background: #0b0d12; isolation: isolate; padding: clamp(80px, 11vw, 140px) 0 clamp(60px, 8vw, 100px); text-align: center; }
+  .band video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: .42; }
+  .band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(70% 80% at 50% 40%, rgba(11,13,18,.35), rgba(11,13,18,.92)); }
+  .band h2 { font: 600 clamp(38px, 5.2vw, 72px)/1.02 var(--sans); letter-spacing: -.05em; max-width: 16ch; margin: 16px auto 20px; }
+  .band .sub { color: rgba(255,255,255,.72); margin: 0 auto; }
+  .bstats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 64px; border-top: 1px solid rgba(255,255,255,.14); }
+  .bstats div { padding: 30px 12px 0; }
+  .bstats div + div { border-left: 1px solid rgba(255,255,255,.14); }
+  .bstats .v { font: 600 clamp(44px, 5.4vw, 76px)/1 var(--sans); letter-spacing: -.055em; }
+  .bstats .v span.u { color: var(--red2); }
+  .bstats .k { font: 500 12px/1.4 var(--mono); color: rgba(255,255,255,.55); margin-top: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  .band .note { font: 400 11.5px/1 var(--mono); color: rgba(255,255,255,.4); margin-top: 34px; }
+
+  .net .stage { margin: 0; }
+  .net .terms { margin-top: 14px; }
+
+  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .post { background: var(--card); border: 1px solid var(--line2); border-radius: var(--r); overflow: hidden; transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s; display: flex; flex-direction: column; }
+  .post:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .post .im { aspect-ratio: 16/10; overflow: hidden; }
+  .post .im img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1); }
+  .post:hover .im img { transform: scale(1.05); }
+  .post .bd { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .post .cat { font: 500 11px/1 var(--mono); color: var(--red); letter-spacing: .06em; text-transform: uppercase; }
+  .post h3 { font: 600 20px/1.2 var(--sans); letter-spacing: -.03em; }
+  .post p { color: var(--muted); font-size: 14.5px; }
+  .post .meta { margin-top: auto; padding-top: 10px; font: 400 12px/1 var(--mono); color: var(--muted); display: flex; justify-content: space-between; }
+
+  .offers { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .offers span { font: 500 12.5px/1 var(--sans); padding: 8px 12px; border-radius: 99px; background: var(--bg); border: 1px solid var(--line2); }
+
+  footer.dk { background: #0e1013; color: rgba(255,255,255,.75); margin-top: 14px; padding: 90px 0 36px; }
+  footer.dk .wrap { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; }
+  footer.dk h4 { color: rgba(255,255,255,.45); }
+  footer.dk ul { color: rgba(255,255,255,.8); }
+  footer.dk ul small { display: block; color: rgba(255,255,255,.45); font-size: 12.5px; }
+  footer.dk .legal { border-color: rgba(255,255,255,.12); color: rgba(255,255,255,.45); }
+  footer.dk .brand { color: #fff; }
+
+  @media (max-width: 1020px) {
+    .hero2 .in { grid-template-columns: 1fr; }
+    .hero2 .float { justify-self: start; }
+    .why, .posts { grid-template-columns: 1fr 1fr; }
+    .track2 .grid { grid-template-columns: 1fr; }
+    .bstats { grid-template-columns: 1fr 1fr; }
+    .bstats div:nth-child(3) { border-left: 0; }
+    .bstats div:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.14); margin-top: 24px; }
+    footer.dk .wrap { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 720px) {
+    .hero2 { padding: 8px 8px 0; }
+    .hero2 .frame { border-radius: 24px; min-height: 92svh; }
+    .hero2 .frame::before { background: linear-gradient(180deg, rgba(9,11,15,.5) 0%, rgba(9,11,15,.35) 30%, rgba(9,11,15,.88) 75%); }
+    .hero2 .in { padding: 110px 18px 22px; gap: 22px; }
+    .hero2 .float { width: 100%; }
+    .trust { margin-top: 22px; gap: 8px 14px; }
+    .cue { display: none; }
+    .why, .posts { grid-template-columns: 1fr; }
+    .wc .ic { margin-bottom: 24px; }
+    .tphoto { min-height: 520px; border-radius: 24px; }
+    .tphoto .float.tb { grid-template-columns: 1fr; gap: 14px; left: 12px; right: 12px; bottom: 12px; padding: 16px; }
+    .band { margin: 0 8px; border-radius: 24px; }
+    .bstats div { padding: 22px 8px 0; }
+  }
+
   @media (max-width: 1020px) {
     .nav ul { display: none; }
     .bento { grid-template-columns: repeat(2, 1fr); }
@@ -311,8 +429,9 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#portal">Tracking</a></li>
     <li><a href="#network">Network</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#drivers">Drivers</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="#blog">Blog</a></li>
   </ul>
   <div class="r">
     <a href="#portal" class="btn ghost">Track a load</a>
@@ -320,45 +439,25 @@
   </div>
 </nav>
 
-<header class="hero">
-  <div class="bgfx"></div>
-  <div class="wrap">
-    <span class="chip enter"><b>CDL-A</b> We're hiring drivers in 4 terminals →</span>
-    <h1 class="enter" style="animation-delay:.08s">Freight that moves <span class="grad">like clockwork.</span></h1>
-    <p class="sub enter" style="animation-delay:.16s">MDN is a family-owned, asset-based carrier out of Davenport, Iowa. Our own trucks, our own drivers, and live tracking on every load.</p>
-    <div class="ctas enter" style="animation-delay:.24s">
-      <a href="#contact" class="btn red">Get a quote <span class="k">→</span></a>
-      <a href="#portal" class="btn ghost">Track a load</a>
-    </div>
-
-    <div class="stage enter" style="animation-delay:.36s" id="stage">
-      <div class="board" id="board">
-        <div class="top">
-          <div class="l"><span class="dot"></span><span>Network · live</span></div>
-          <div class="tabs"><span class="on">Lanes</span><span>Terminals</span><span>Coverage</span></div>
-          <span>48 states</span>
+<header class="hero2">
+  <div class="frame">
+    <div class="media"><video id="heroVid" muted loop playsinline preload="metadata" poster="https://images.pexels.com/videos/17899033/pexels-photo-17899033.jpeg?auto=compress&cs=tinysrgb&w=1920"></video></div>
+    <div class="in">
+      <div>
+        <span class="chip dk enter"><b>CDL-A</b> We're hiring drivers in 4 terminals →</span>
+        <h1 class="enter" style="animation-delay:.08s">Freight that moves <span class="grad-l">like clockwork.</span></h1>
+        <p class="sub enter" style="animation-delay:.16s">MDN is a family-owned, asset-based carrier out of Davenport, Iowa. Our own trucks, our own drivers, and live tracking on every load.</p>
+        <div class="ctas enter" style="animation-delay:.24s">
+          <a href="#contact" class="btn red">Get a quote <span class="k">→</span></a>
+          <a href="#portal" class="btn glassd">Track a load</a>
         </div>
-        <svg id="map" viewBox="0 0 1000 560" aria-label="Map of MDN lanes across the United States">
-          <defs>
-            <linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#e11937"/><stop offset="1" stop-color="#ff7a59"/></linearGradient>
-          </defs>
-          <g class="land"></g>
-          <g class="routes"></g>
-          <g class="cities"></g>
-          <g class="trucks"></g>
-        </svg>
-        <div class="float f-load" id="fload">
-          <div class="h"><span>LOAD #MDN-48213</span><span class="st"><span class="dot" style="width:6px;height:6px;box-shadow:none"></span>In transit</span></div>
-          <div class="lane">Davenport <svg width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h20m-4-4 4 4-4 4"/></svg> Atlanta</div>
-          <div class="bar"><i></i></div>
-          <div class="meta"><div>ETA<b>Thu 14:30</b></div><div>Miles left<b>312</b></div><div>Trailer<b>Reefer</b></div></div>
-        </div>
-        <div class="float f-stat">
-          <div class="k">ON-TIME · 30 DAYS</div>
-          <div class="v">98.2%<small>▲ 0.6</small></div>
-          <svg viewBox="0 0 200 40" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e11937" stop-opacity=".25"/><stop offset="1" stop-color="#e11937" stop-opacity="0"/></linearGradient></defs><path d="M0 30 L20 26 L40 28 L60 20 L80 22 L100 15 L120 18 L140 10 L160 12 L180 6 L200 8 L200 40 L0 40Z" fill="url(#sg)"/><path d="M0 30 L20 26 L40 28 L60 20 L80 22 L100 15 L120 18 L140 10 L160 12 L180 6 L200 8" fill="none" stroke="#e11937" stroke-width="2"/></svg>
-        </div>
-        <div class="float f-chip"><span class="av"><span style="background:#0e1013">JD</span><span style="background:#e11937">AK</span><span style="background:#737880">MR</span></span>Dispatch is online now</div>
+        <div class="trust enter" style="animation-delay:.32s"><span>Asset-based carrier</span><span>Family-owned since 2018</span><span>24/7 dispatch</span></div>
+      </div>
+      <div class="float f-load enter" style="animation-delay:.5s">
+        <div class="h"><span>LOAD #MDN-48213</span><span class="st"><span class="dot" style="width:6px;height:6px;box-shadow:none"></span>In transit</span></div>
+        <div class="lane">Davenport <svg width="22" height="10" viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h20m-4-4 4 4-4 4"/></svg> Atlanta</div>
+        <div class="bar"><i></i></div>
+        <div class="meta"><div>ETA<b>Thu 14:30</b></div><div>Miles left<b>312</b></div><div>Trailer<b>Reefer</b></div></div>
       </div>
     </div>
   </div>
@@ -370,6 +469,20 @@
     <span>ACME CO.</span><span>Globex</span><span>Initech</span><span>NORTHWIND</span><span>Umbrella</span><span>Hooli</span><span>Stark Supply</span><span>Wayne Foods</span>
     <span>ACME CO.</span><span>Globex</span><span>Initech</span><span>NORTHWIND</span><span>Umbrella</span><span>Hooli</span><span>Stark Supply</span><span>Wayne Foods</span>
   </div></div>
+</section>
+
+<section class="sec" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label rv">Why MDN</span><h2 class="big rv">Why shippers choose MDN. <span style="color:var(--muted)">And stay.</span></h2></div>
+      <p class="sub rv" style="max-width:40ch">Reliable, asset-based and easy to reach. The basics, done properly, every load.</p>
+    </div>
+    <div class="why">
+      <div class="wc rv"><div class="ic" style="background:rgba(18,183,106,.12);color:var(--green)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>On-time performance</h3><p>Loads delivered inside the agreed window, tracked and reviewed every month.</p></div>
+      <div class="wc rv"><div class="ic" style="background:var(--rose);color:var(--red)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h12v10H2zM14 10h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><h3>Asset-based capacity</h3><p>Our own trucks and our own drivers, so capacity holds up when the market tightens.</p><div class="tags"><span>Dry van</span><span>Reefer</span><span>Flatbed</span></div></div>
+      <div class="wc rv"><div class="ic" style="background:rgba(59,130,246,.12);color:#3b82f6"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Live load tracking</h3><p>Every customer gets a login to see where their freight is, right now, without calling.</p></div>
+    </div>
+  </div>
 </section>
 
 <section class="sec" id="services">
@@ -426,64 +539,80 @@
   </div>
 </section>
 
-<section class="portal" id="portal">
+<section class="sec track2" id="portal" style="padding-top:0">
   <div class="wrap grid">
     <div>
-      <span class="label rv" style="color:var(--red2)">Customer portal</span>
-      <h2 class="big rv" style="margin-top:14px">Know where your freight is. <span style="color:rgba(255,255,255,.45)">Without calling.</span></h2>
-      <p class="sub rv">Log in, type a load number and see where it is, when it'll arrive and every stop along the way. Updated straight from our dispatch system.</p>
-      <ul class="rv">
-        <li><i>✓</i><div>Live status on every load, from pickup to delivery</div></li>
-        <li><i>✓</i><div>Private, invite-only access for your team</div></li>
-        <li><i>✓</i><div>Works on your phone, no app to install</div></li>
+      <span class="label rv">Customer portal</span>
+      <h2 class="big rv" style="margin-top:14px">Know where your freight is. <span style="color:var(--muted)">Without calling.</span></h2>
+      <p class="sub rv" style="margin-top:20px">Log in, type a load number and see where it is, when it'll arrive and every stop along the way. Updated straight from our dispatch system.</p>
+      <ul class="checks rv">
+        <li><i>✓</i>Live status on every load, from pickup to delivery</li>
+        <li><i>✓</i>Arrival times and every stop along the way</li>
+        <li><i>✓</i>Private, invite-only access for your team</li>
+        <li><i>✓</i>Works on your phone, no app to install</li>
       </ul>
-      <div class="actions rv" style="margin-top:34px"><a href="#" class="btn red">Log in to track</a><a href="#contact" class="btn" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)">Request access</a></div>
+      <div class="actions rv"><a href="#" class="btn red">Log in to track</a><a href="#contact" class="btn ghost">Request access</a></div>
     </div>
-    <div class="win rv">
-      <div class="bar0"><i></i><i></i><i></i><span>mdnfreightinc.com/track</span></div>
-      <div class="body">
-        <div class="search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span id="typed"></span><span class="cur"></span><span class="go">Track</span></div>
-        <div class="res">
-          <div class="panel">
-            <div class="k">STATUS</div>
-            <ul class="steps" style="margin-top:14px">
-              <li class="done">Picked up<small>Davenport, IA · Mon 07:12</small></li>
-              <li class="done">Departed terminal<small>Mon 08:40</small></li>
-              <li class="now">In transit<small>Near Nashville, TN · now</small></li>
-              <li>Delivered<small>Atlanta, GA · ETA Thu 14:30</small></li>
-            </ul>
-          </div>
-          <div style="display:grid;gap:14px">
-            <div class="panel"><div class="k">ETA</div><div class="v">Thu, 14:30</div><div class="k" style="margin-top:6px;color:#12b76a">On schedule</div></div>
-            <div class="panel"><div class="k">ROUTE</div>
-              <div class="mini"><svg viewBox="0 0 200 92"><path d="M20 20 C 80 10, 120 70, 180 72" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2" stroke-dasharray="4 4"/><path d="M20 20 C 60 13, 90 35, 112 50" fill="none" stroke="#ff5a6e" stroke-width="2.5"/><circle cx="20" cy="20" r="4" fill="#fff"/><circle cx="180" cy="72" r="4" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="112" cy="50" r="5" fill="#ff5a6e"/><circle cx="112" cy="50" r="10" fill="#ff5a6e" opacity=".25"/></svg></div>
-            </div>
-          </div>
-        </div>
+    <div class="tphoto rv">
+      <img src="https://images.pexels.com/videos/29254853/pexels-photo-29254853.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Truck crossing a bridge through autumn trees">
+      <div class="float tl"><span class="dot"></span>Live tracking · MDN-48213</div>
+      <div class="float tb">
+        <ul class="steps light">
+          <li class="done">Picked up<small>Davenport, IA · Mon 07:12</small></li>
+          <li class="now">In transit<small>Near Nashville, TN · now</small></li>
+          <li>Delivered<small>Atlanta, GA · ETA Thu 14:30</small></li>
+        </ul>
+        <div><div class="k">ETA</div><div class="v">Thu, 14:30</div><div class="ok">● On schedule</div><div class="k" style="margin-top:18px">NEXT STOP</div><div class="v" style="font-size:18px">Atlanta, GA</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec">
+<section class="band" id="about">
+  <video id="bandVid" muted loop playsinline preload="none" poster="https://images.pexels.com/videos/31885444/4k-drone-video-iowa-iowa-80-largest-truckstop-31885444.jpeg?auto=compress&cs=tinysrgb&w=1600"><source src="https://videos.pexels.com/video-files/31885444/13582115_1280_720_60fps.mp4" type="video/mp4"></video>
   <div class="wrap">
-    <div class="sec-head">
-      <div><span class="label rv">By the numbers</span><h2 class="big rv">Big enough to carry it. <span style="color:var(--muted)">Small enough to answer the phone.</span></h2></div>
-      <p class="sub rv" style="max-width:34ch;font-size:15px">Figures are placeholders until MDN confirms them.</p>
+    <span class="label rv" style="color:var(--red2)">Rooted in Iowa</span>
+    <h2 class="rv">Big enough to carry it. <span style="color:rgba(255,255,255,.5)">Small enough to answer the phone.</span></h2>
+    <p class="sub rv">Since 2018, MDN has grown from a family business in Davenport into an asset-based carrier with four terminals. The principle hasn't changed: treat customers and drivers right, and always pick up the phone.</p>
+    <div class="bstats">
+      <div class="rv"><div class="v">2018</div><div class="k">Founded</div></div>
+      <div class="rv"><div class="v"><span data-to="250">0</span><span class="u">+</span></div><div class="k">Trucks we own</div></div>
+      <div class="rv"><div class="v">4</div><div class="k">Terminals</div></div>
+      <div class="rv"><div class="v"><span data-to="98">0</span><span class="u">%</span></div><div class="k">On-time delivery</div></div>
     </div>
-    <div class="stats">
-      <div class="st rv"><div class="v"><span data-to="98">0</span><span class="u">%</span></div><div class="k">On-time delivery</div></div>
-      <div class="st rv"><div class="v"><span data-to="250">0</span><span class="u">+</span></div><div class="k">Trucks we own</div></div>
-      <div class="st rv"><div class="v"><span data-to="12">0</span><span class="u">M</span></div><div class="k">Miles a year</div></div>
-      <div class="st rv"><div class="v">24<span class="u">/7</span></div><div class="k">Real people in dispatch</div></div>
-    </div>
+    <p class="note">Figures are placeholders until MDN confirms them.</p>
   </div>
 </section>
 
-<section class="sec" id="network" style="padding-top:0">
+<section class="sec net" id="network">
   <div class="wrap">
     <div class="sec-head">
-      <div><span class="label rv">Terminals</span><h2 class="big rv">Four terminals. <span style="color:var(--muted)">Coast-to-coast lanes.</span></h2></div>
+      <div><span class="label rv">Network</span><h2 class="big rv">Four terminals. <span style="color:var(--muted)">Coast-to-coast lanes.</span></h2></div>
+      <p class="sub rv" style="max-width:40ch">Four terminals keep our trucks close to where your freight is, with lanes reaching every corner of the country.</p>
+    </div>
+    <div class="stage rv" id="stage">
+      <div class="board" id="board">
+        <div class="top">
+          <div class="l"><span class="dot"></span><span>Network · live</span></div>
+          <div class="tabs"><span class="on">Lanes</span><span>Terminals</span><span>Coverage</span></div>
+          <span>48 states</span>
+        </div>
+        <svg id="map" viewBox="0 0 1000 560" aria-label="Map of MDN lanes across the United States">
+          <defs>
+            <linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#e11937"/><stop offset="1" stop-color="#ff7a59"/></linearGradient>
+          </defs>
+          <g class="land"></g>
+          <g class="routes"></g>
+          <g class="cities"></g>
+          <g class="trucks"></g>
+        </svg>
+        <div class="float f-stat">
+          <div class="k">ON-TIME · 30 DAYS</div>
+          <div class="v">98.2%<small>▲ 0.6</small></div>
+          <svg viewBox="0 0 200 40" preserveAspectRatio="none"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e11937" stop-opacity=".25"/><stop offset="1" stop-color="#e11937" stop-opacity="0"/></linearGradient></defs><path d="M0 30 L20 26 L40 28 L60 20 L80 22 L100 15 L120 18 L140 10 L160 12 L180 6 L200 8 L200 40 L0 40Z" fill="url(#sg)"/><path d="M0 30 L20 26 L40 28 L60 20 L80 22 L100 15 L120 18 L140 10 L160 12 L180 6 L200 8" fill="none" stroke="#e11937" stroke-width="2"/></svg>
+        </div>
+        <div class="float f-chip"><span class="av"><span style="background:#0e1013">JD</span><span style="background:#e11937">AK</span><span style="background:#737880">MR</span></span>Dispatch is online now</div>
+      </div>
     </div>
     <div class="terms">
       <div class="tm hq rv"><div class="h"><span class="code">DVN · HQ</span><span class="clock" data-tz="America/Chicago"></span></div><h3>Davenport, IA</h3><p>Headquarters &amp; main yard</p></div>
@@ -513,12 +642,28 @@
         <div><b>Well-kept equipment</b><span>Late-model, maintained in-house.</span></div>
         <div><b>Dispatch that answers</b><span>Real people, day or night.</span></div>
       </div>
-      <div class="actions rv"><a href="#" class="btn red">See open positions</a><a href="#" class="btn ghost">Apply in 5 minutes</a></div>
+      <div class="offers rv" style="margin:-8px 0 28px"><span>Company drivers</span><span>Owner operators</span><span>Lease to own</span></div>
+      <div class="actions rv"><a href="#" class="btn red">See open positions</a><a href="https://intelliapp.driverapponline.com/c/mdnfreightinc?uri_b=ia_mdnfreightinc_2118851939" class="btn ghost" target="_blank" rel="noopener">Apply in 5 minutes</a></div>
     </div>
     <div class="ph rv">
       <img src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?w=1400&q=80&auto=format&fit=crop" alt="Truck at sunrise">
       <div class="float"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Apply in 5 minutes</b><span>From your phone, no résumé needed</span></div></div>
     </div>
+  </div>
+</section>
+
+<section class="sec" id="blog" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label rv">Latest updates</span><h2 class="big rv">From the road. <span style="color:var(--muted)">News and insights.</span></h2></div>
+      <a href="#" class="btn ghost rv">View all posts →</a>
+    </div>
+    <div class="posts">
+      <a href="#" class="post rv"><div class="im"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="cat">Shippers</span><h3>When a dedicated fleet makes more sense than spot freight</h3><p>How to tell if your lanes are ready for trucks and drivers of their own.</p><div class="meta"><span>Oct 28, 2026</span><span>5 min read</span></div></div></a>
+      <a href="#" class="post rv"><div class="im"><img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=900&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="cat">Refrigerated</span><h3>Keeping freight cold from Iowa to Florida</h3><p>What happens between pickup and delivery on a temperature-controlled load.</p><div class="meta"><span>Oct 14, 2026</span><span>4 min read</span></div></div></a>
+      <a href="#" class="post rv"><div class="im"><img src="https://images.unsplash.com/photo-1591768793355-74d04bb6608f?w=900&q=75&auto=format&fit=crop" alt=""></div><div class="bd"><span class="cat">Company</span><h3>Inside our Davenport terminal</h3><p>A look at the yard, the shop and the dispatch team behind every MDN load.</p><div class="meta"><span>Sep 30, 2026</span><span>6 min read</span></div></div></a>
+    </div>
+    <p class="mono rv" style="color:var(--muted);font-size:12px;margin-top:16px">Sample posts. The real ones come from the blog in Sanity.</p>
   </div>
 </section>
 
@@ -530,13 +675,13 @@
   <div class="actions"><a href="#" class="btn white">Get a quote →</a><a href="tel:5550102048" class="btn glass">(555) 010-2048</a></div>
 </section>
 
-<footer>
+<footer class="dk">
   <div class="wrap">
-    <div><a href="#" class="brand"><span class="mk">MDN</span>Freight</a><p style="color:var(--muted);margin-top:16px;max-width:32ch">Family-owned trucking, moving freight across North America since 2018.</p></div>
-    <div><h4>Services</h4><ul><li>Full Truckload</li><li>Refrigerated</li><li>Flatbed</li><li>Expedited</li></ul></div>
-    <div><h4>Company</h4><ul><li>About</li><li>Drivers</li><li>Blog</li><li>Track a load</li></ul></div>
-    <div><h4>Contact</h4><ul><li>(555) 010-2048</li><li>hello@example.com</li><li>Davenport, IA</li></ul></div>
-    <div class="legal"><span>© 2026 MDN Freight Inc.</span><span>Concept G · Atlas · sample content · photos Unsplash</span></div>
+    <div><a href="#" class="brand"><span class="mk">MDN</span>Freight</a><p style="margin-top:16px;max-width:32ch;color:rgba(255,255,255,.55)">Family-owned trucking, moving freight across North America since 2018.</p><p style="margin-top:20px;font-weight:600;color:#fff">(555) 010-2048</p><p style="color:rgba(255,255,255,.55)">hello@example.com</p></div>
+    <div><h4>Services</h4><ul><li>Full Truckload</li><li>Refrigerated</li><li>Flatbed</li><li>Expedited</li><li>Dedicated Fleet</li><li>Warehousing</li></ul></div>
+    <div><h4>Company</h4><ul><li>About</li><li>Brokers</li><li>Drivers</li><li>Blog</li><li>Contact</li><li>Customer login</li></ul></div>
+    <div><h4>Terminals</h4><ul><li>Davenport, IA<small>Headquarters · [address]</small></li><li>Romeoville, IL<small>[address]</small></li><li>Eagan, MN<small>[address]</small></li><li>Davie, FL<small>[address]</small></li></ul></div>
+    <div class="legal"><span>© 2026 MDN Freight Inc. · USDOT [number] · MC [number]</span><span>Atlas · sample content · photos Unsplash, video Pexels</span></div>
   </div>
 </footer>
 
@@ -620,11 +765,19 @@
   for (let i = 0; i < 41; i++) tick();
   if (!reduce) setInterval(tick, 900);
 
-  // Typing effect in the portal search
-  const typed = document.getElementById('typed'), txt = 'MDN-48213';
-  let started = false;
-  const tio = new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; let i = 0; const t = setInterval(() => { typed.textContent = txt.slice(0, ++i); if (i >= txt.length) clearInterval(t); }, reduce ? 0 : 120); } }, { threshold: .4 });
-  tio.observe(typed);
+  // Hero video: landscape on desktop, portrait on phones; play only while on screen
+  const hv = document.getElementById('heroVid');
+  const src = matchMedia('(max-width: 720px)').matches
+    ? 'https://videos.pexels.com/video-files/34479229/14610576_720_1280_24fps.mp4'
+    : 'https://videos.pexels.com/video-files/17899033/17899033-hd_1920_1080_24fps.mp4';
+  if (matchMedia('(max-width: 720px)').matches) hv.poster = 'https://images.pexels.com/videos/34479229/cargo-cdl-driving-hard-work-34479229.jpeg?auto=compress&cs=tinysrgb&w=900';
+  if (!reduce) { hv.autoplay = true; hv.src = src; }
+  const bv = document.getElementById('bandVid');
+  const vio = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target; if (reduce || !v.currentSrc && !v.src && !v.querySelector('source')) return;
+    if (e.isIntersecting) v.play().catch(() => {}); else v.pause();
+  }), { threshold: .15 });
+  vio.observe(hv); vio.observe(bv);
 
   // Terminal clocks
   const clocks = document.querySelectorAll('.clock');
